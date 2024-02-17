@@ -16,6 +16,8 @@ public class Customer {
     private String name;
     @Column(name = "customer_address",length = 100)
     private String address;
+    @Column(name = "customer_contact")
+    private String contact;
     @Column(name = "customer_salary",length = 200)
     private double salary;
 
@@ -23,11 +25,27 @@ public class Customer {
 
     }
 
+    public Customer(String id, String name, String address, String contact, double salary) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+        this.salary = salary;
+    }
+
     public Customer(String id, String name, String address, double salary) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.salary = salary;
+    }
+
+    public Customer(int id) {
+        this.id = String.valueOf(id);
+    }
+
+    public Customer(String value) {
+
     }
 
     public String getId() {
@@ -68,7 +86,16 @@ public class Customer {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
+                ", contact='" + contact + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }

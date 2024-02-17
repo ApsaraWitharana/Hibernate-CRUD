@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -17,6 +16,9 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
+
+    @FXML
+    private Button btnOrder;
 
     @FXML
     private Button btnCustomer;
@@ -69,7 +71,18 @@ public class HomeController implements Initializable {
     }
 
 
-    public void btnItemOnAction(ActionEvent event) {
-        
+    public void btnItemOnAction(ActionEvent event) throws IOException {
+        Parent load = FXMLLoader.load(getClass().getResource("/lk/ijse/view/item.fxml"));
+        ancPaneHome.getChildren().clear();
+        ancPaneHome.getChildren().add(load);
     }
+
+
+    @FXML
+    void btnOrderOnAction(ActionEvent event) throws IOException {
+        Parent load = FXMLLoader.load(getClass().getResource("/lk/ijse/view/order1.fxml"));
+        ancPaneHome.getChildren().clear();
+        ancPaneHome.getChildren().add(load);
+    }
+
 }

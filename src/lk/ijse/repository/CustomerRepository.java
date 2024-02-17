@@ -3,6 +3,7 @@ package lk.ijse.repository;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import lk.ijse.config.SessionFactoryConfig;
 import lk.ijse.entity.Customer;
 import org.hibernate.Session;
@@ -36,6 +37,7 @@ private final Session session;
             transaction.commit();
             session.close();
             return customer_id;
+
         }catch (Exception e){
             transaction.rollback();
             session.close();
@@ -86,5 +88,25 @@ private final Session session;
 
         ObservableList<Customer> observableList = FXCollections.observableArrayList(dataList);
         return observableList;
+    }
+
+    public List<Integer> getCustIDList() {
+        Transaction transaction = session.beginTransaction();
+        List<Integer> id = null;
+
+        try {
+            id = session.createSQLQuery("SELECT customer_id FROM customer ").list();
+            transaction.commit();
+
+        }catch (Exception e){
+            transaction.rollback();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
+        }finally {
+            session.close();
+        }
+
+        return id;
+
     }
 }

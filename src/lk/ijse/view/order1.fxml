@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancPaneOrder" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black; -fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.OrderControllerr">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="520.0" layoutY="81.0" stroke="WHITE" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.1818182251670144">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.021052632480859756" green="0.005380116868764162" blue="0.008514619432389736" opacity="0.9700000286102295" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="108.0" layoutY="26.0" text="Customer Order Management">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="228.0" text="Item_code">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="172.0" text="Customer_id">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="110.0" text="Order_id">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCust" layoutX="186.0" layoutY="172.0" prefHeight="26.0" prefWidth="100.0" />
+      <ComboBox fx:id="cmbItem" layoutX="186.0" layoutY="228.0" prefHeight="26.0" prefWidth="100.0" />
+      <Label fx:id="lblOrder" layoutX="186.0" layoutY="110.0" prefHeight="27.0" prefWidth="42.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPrice" alignment="CENTER" focusTraversable="false" layoutX="378.0" layoutY="104.0" prefHeight="34.0" prefWidth="272.0" promptText="Unit Price">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtQty" alignment="CENTER" focusTraversable="false" layoutX="378.0" layoutY="172.0" onKeyReleased="#priceOnAction" prefHeight="34.0" prefWidth="272.0" promptText="Quatity">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="385.0" layoutY="227.0" text="Total Price">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="423.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-radius: 20;" text="Save" />
+      <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="540.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-radius: 20;" text="Update" />
+      <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="650.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-radius: 20;" text="Clear" />
+      <Label fx:id="lblPrice" layoutX="487.0" layoutY="226.0" prefHeight="27.0" prefWidth="127.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbl" blendMode="MULTIPLY" layoutX="22.0" layoutY="308.0" onMouseClicked="#tblOnAction" prefHeight="237.0" prefWidth="734.0">
+         <columns>
+            <TableColumn fx:id="ColOrderId" minWidth="0.800018310546875" text="Order id" />
+            <TableColumn fx:id="ColCustId" prefWidth="87.99993896484375" text="Customer id" />
+            <TableColumn fx:id="ColItemId" minWidth="8.0" prefWidth="103.2000732421875" text="Item code" />
+            <TableColumn fx:id="ColUnitP" prefWidth="116.79998779296875" text="Unit price" />
+            <TableColumn fx:id="ColQty" minWidth="0.0" prefWidth="117.5999755859375" text="Quantity" />
+            <TableColumn fx:id="ColPrice" minWidth="0.0" prefWidth="116.79998779296875" text="Total price" />
+            <TableColumn fx:id="ColAction" minWidth="0.0" prefWidth="106.39990234375" text="Action" />
+         </columns>
+      </TableView>
+      <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="585.0" layoutY="560.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20;" text="Place Order" />
+      <ImageView fx:id="" layoutX="22.0" layoutY="14.0" onMouseClicked="#btnHomeOnAction">
+         <image>
+            <Image url="@../assets/icons8-home-64.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblDate" layoutX="592.0" layoutY="32.0" prefHeight="27.0" prefWidth="186.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

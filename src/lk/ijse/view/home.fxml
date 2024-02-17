@@ -20,7 +20,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnItem" layoutX="300.0" layoutY="389.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="48.0" prefWidth="218.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 30;" text="Item" textFill="WHITE">
+      <Button fx:id="btnItem" layoutX="300.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="48.0" prefWidth="218.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 30;" text="Item" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -40,5 +40,10 @@
             <Image url="@../assets/icons8-home-64.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnOrder" layoutX="300.0" layoutY="455.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="48.0" prefWidth="218.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 30;" text="Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,30 @@
+
+
+
+#btnSave{
+    -fx-background-color: #218838;
+    -fx-text-fill: white;
+}
+
+#btnDelete{
+    -fx-background-color: #ffc107;
+}
+#imgHome:hover{
+    -fx-effect: dropshadow(gaussian,#6495ED,20,0.0,0,0);
+}
+
+
+ table{
+     border-color: black;
+     width: 400px;
+ }
+th{
+    background-color: purple;
+    border: 1px solid black;
+}
+
+td{
+    background-color: rgb(180, 136, 180);
+    border: 1px solid blue;
+}
+

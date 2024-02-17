@@ -96,7 +96,7 @@ public class CustomeraController {
     void btnDeleteOnAction(ActionEvent event) {
         CustomerRepository customerRepository = new CustomerRepository();
         Customer customer = customerRepository.getCustomer(txtId.getText());
-        customerRepository=new CustomerRepository();
+        customerRepository = new CustomerRepository();
         boolean deleted = customerRepository.deleteCustomer(customer);
         if (deleted) {
             AlertController.confirmmessage("Process Completed","Customer details deleted successfully");
@@ -106,8 +106,6 @@ public class CustomeraController {
                     "Please try again");
         }
     }
-
-   
 
     @FXML
     void btnHomeOnAction(MouseEvent event) throws IOException {
@@ -135,11 +133,6 @@ public class CustomeraController {
         }
     }
 
-    private void setDataToTableView() {
-       ObservableList<Customer> customerList = new CustomerRepository().getDetailsToTableView();
-        tViewCustomer.setItems(customerList);
-    }
-
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
         CustomerRepository customerRepository = new CustomerRepository();
@@ -156,6 +149,14 @@ public class CustomeraController {
             AlertController.errormessage("Process Terminated","Customer details updating unsuccessfull. \n " +
                     "Please resubmit the information  ");
         }
+    }
+
+   
+
+
+    private void setDataToTableView() {
+       ObservableList<Customer> customerList = new CustomerRepository().getDetailsToTableView();
+        tViewCustomer.setItems(customerList);
     }
 
     public void tblOnMouseClicked(MouseEvent mouseEvent) {
