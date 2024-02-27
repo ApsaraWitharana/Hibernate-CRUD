@@ -98,7 +98,7 @@ public class OrderControllerr implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setOrderId();
-        setItemList();
+       // setItemList();
        //setCusIdList();
        setCellValueFactory();
        lblDate.setText(LocalDate.now().toString());

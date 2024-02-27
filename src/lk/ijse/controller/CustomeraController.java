@@ -99,8 +99,10 @@ public class CustomeraController {
         customerRepository = new CustomerRepository();
         boolean deleted = customerRepository.deleteCustomer(customer);
         if (deleted) {
+
             AlertController.confirmmessage("Process Completed","Customer details deleted successfully");
             setDataToTableView();
+
         } else {
             AlertController.errormessage("Process Interrupted","Customer details deletion failed \n " +
                     "Please try again");
